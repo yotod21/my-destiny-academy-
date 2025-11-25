@@ -1,8 +1,9 @@
 import React, {useEffect,useState} from 'react'
 import API from '../api'
+import { demoCourses } from '../data/demoData'
 export default function Courses(){
-  const [courses,setCourses]=useState([])
-  useEffect(()=>{ API.get('/api/courses').then(r=>setCourses(r.data)).catch(()=>{}) },[])
+  const [courses,setCourses]=useState(demoCourses)
+  useEffect(()=>{ API.get('/api/courses').then(r=>setCourses(r.data)).catch(()=>setCourses(demoCourses)) },[])
   return (
     <section>
       <h2 className="text-2xl font-bold mb-4">Courses</h2>

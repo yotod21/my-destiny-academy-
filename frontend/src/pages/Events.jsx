@@ -1,8 +1,9 @@
 import React, {useEffect,useState} from 'react'
 import API from '../api'
+import { demoEvents } from '../data/demoData'
 export default function Events(){
-  const [events,setEvents]=useState([])
-  useEffect(()=>{ API.get('/api/events').then(r=>setEvents(r.data)).catch(()=>{}) },[])
+  const [events,setEvents]=useState(demoEvents)
+  useEffect(()=>{ API.get('/api/events').then(r=>setEvents(r.data)).catch(()=>setEvents(demoEvents)) },[])
   return (
     <section>
       <h2 className="text-2xl font-bold mb-4">Events</h2>

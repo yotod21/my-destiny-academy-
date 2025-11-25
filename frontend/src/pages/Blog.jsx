@@ -1,8 +1,9 @@
 import React, {useEffect,useState} from 'react'
 import API from '../api'
+import { demoPosts } from '../data/demoData'
 export default function Blog(){
-  const [posts,setPosts]=useState([])
-  useEffect(()=>{ API.get('/api/posts').then(r=>setPosts(r.data)).catch(()=>{}) },[])
+  const [posts,setPosts]=useState(demoPosts)
+  useEffect(()=>{ API.get('/api/posts').then(r=>setPosts(r.data)).catch(()=>setPosts(demoPosts)) },[])
   return (
     <section>
       <h2 className="text-2xl font-bold mb-4">Blog</h2>
