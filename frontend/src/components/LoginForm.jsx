@@ -81,7 +81,9 @@ export default function LoginForm({ onLogin }) {
               Sign in
             </button>
           </div>
+          <p>demo user: admin password: "passwprd"</p>
         </form>
+        
       </div>
     </div>
   )
