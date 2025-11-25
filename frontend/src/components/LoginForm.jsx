@@ -33,7 +33,7 @@ export default function LoginForm({ onLogin }) {
             Sign in to access the admin panel
           </p> 
           <p className="mt-2 text-center text-sm text-gray-600">
-            demo user: admin password: "passwprd"
+            demo user: admin password: "password"
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
